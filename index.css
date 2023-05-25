@@ -1,0 +1,45 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffdcf5;
+}
+h1{
+    color: #0c1845;
+}
+
+.vertical {
+    border-left: 6px solid #7c73e6;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 70px;
+}
+
+
+.left-column {
+    margin-left: 2cm;
+    width: 50%;
+    height: 250px;
+    background: #ffdcf5;
+    float: left;
+}
+.right-column {
+    width: 45%;
+    height: 250px;
+    background: #ffdcf5;
+    float:right;
+}
+
+button{
+    font-family: 'Poppins', sans-serif;
+}
+
+input{
+    font-family: 'Poppins', sans-serif;
+}
+
+textarea{
+    font-family: 'Poppins', sans-serif;
+}
+
+

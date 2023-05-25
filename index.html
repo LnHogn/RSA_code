@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mã hóa RSA</title>
+  <script src="rsa.js"></script>
+  <script src="main.js"></script>
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400');
+  </style>
+</head>
+<body>
+  <h1>Mã hóa RSA</h1>
+
+  <div class="left-column">
+    <div class="nhap">
+      <label for="banro">Bản rõ: </label>
+      <textarea id="plaintext" rows="4" cols="40"></textarea>
+      <input type="file" id="fileInput" />
+      <br>
+      <script>
+        document.getElementById("fileInput").addEventListener("change", function (event) {
+          var file = event.target.files[0]; 
+          var reader = new FileReader();
+          reader.addEventListener("load", function (event) {
+            var contents = event.target.result;
+            document.getElementById("plaintext").textContent = contents;
+          });
+        reader.readAsText(file);
+        });
+      </script>
+    </div>
+    <div class="maHoa">
+      <button onclick="encrypt()">Mã hóa</button><br>
+    </div>
+    <div class="ketqua">
+      <label for="ciphertext">Bản mã:</label>
+      <textarea id="ciphertext" rows="4" cols="40"></textarea>
+      <div class="nut">
+        <button onclick="chuyen()">Chuyển</button><br>
+        <button onclick="save_ban_ma()">Lưu</button>
+      </div>
+    </div>
+  </div>
+
+  <div class = "vertical"></div>
+
+  <div class="right-column">
+    <label for="banma">Bản mã:</label>
+    <textarea id="banma" rows="4" cols="40"></textarea>
+    <input type="file" id="fileInput_2" /><br>
+
+    <script>
+      document.getElementById("fileInput_2").addEventListener("change", function (event) {
+        var file = event.target.files[0]; 
+        var reader = new FileReader();
+        reader.addEventListener("load", function (event) {
+          var contents = event.target.result;
+          document.getElementById("banma").textContent = contents;
+        });
+      reader.readAsText(file);
+      });
+    </script>
+
+    <div class="giaiMa">
+      <button onclick="decrypt()">Giải mã</button><br>
+    </div>
+    <label for="giaiMa">Bản rõ:</label>
+    <textarea id="giaiMa" rows="4" cols="40"></textarea>
+
+    <button onclick="save_ban_ro()">Lưu</button>
+  </div>
+</body>
+</html>
+
