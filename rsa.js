@@ -15,59 +15,24 @@ function modPow(a, b, n) {
     
     return result;
   }
-  
-  // Hàm mã hóa RSA
-  function rsaEncrypt(plaintext, e, n) {
-    let ciphertext = '';
-    
-    for (let i = 0; i < plaintext.length; i++) {
-      let charCode = plaintext.codePointAt(i);
-      let encryptedCharCode = modPow(charCode, e, n);
-      ciphertext += String.fromCodePoint(encryptedCharCode);
-    }
-    
-    return ciphertext;
-  }
 
-
-  // Hàm giải mã RSA
-function rsaDecrypt(ciphertext, d, n) {
-    let plaintext = '';
-  
-    for (let i = 0; i < ciphertext.length; i++) {
-      let charCode = ciphertext.codePointAt(i);
-      let decryptedCharCode = modPow(charCode, d, n);
-      plaintext += String.fromCodePoint(decryptedCharCode);
-    }
-  
-    return plaintext;
-  }
-
-  
-  // Hàm tạo khóa RSA
 function generateRSAKeys() {
-    // Lựa chọn hai số nguyên tố ngẫu nhiên p và q
     let p = getRandomPrime();
     let q = getRandomPrime();
   
-    // Tính modulus n và hàm Euler phi(n)
     let n = p * q;
     let phi = (p - 1) * (q - 1);
   
-    // Chọn số nguyên e sao cho 1 < e < phi và e là số nguyên tố cùng nhau với phi
     let e = getCoPrime(phi);
   
-    // Tính số nguyên d thỏa mãn d * e ≡ 1 (mod phi)
     let d = modInverse(e, phi);
   
-    // Trả về cặp khóa công khai và khóa bí mật
     return {
       publicKey:  [e, n],
       privateKey: [d, n]
     };
   }
-  
-  // Hàm kiểm tra số nguyên tố
+
   function isPrime(num) {
     if (num < 2) return false;
   
@@ -77,8 +42,8 @@ function generateRSAKeys() {
   
     return true;
   }
-  
-  // Hàm tạo số nguyên tố ngẫu nhiên
+
+
   function getRandomPrime() {
     let prime;
     do {
@@ -87,7 +52,7 @@ function generateRSAKeys() {
     return prime;
   }
   
-  // Hàm tìm ước số nguyên tố cùng nhau với một số
+
   function getCoPrime(num) {
     let coPrime;
     do {
@@ -96,13 +61,13 @@ function generateRSAKeys() {
     return coPrime;
   }
   
-  // Hàm tính ước số chung lớn nhất (GCD)
+
   function gcd(a, b) {
     if (b === 0) return a;
     return gcd(b, a % b);
   }
   
-  // Hàm tính nghịch đảo modulo
+
   function modInverse(a, m) {
     let m0 = m;
     let x0 = 0;
@@ -126,3 +91,28 @@ function generateRSAKeys() {
     return x1;
   }
   
+
+  function rsaEncrypt(plaintext, e, n) {
+    let ciphertext = '';
+    let encryptedCharCode =[];
+    for (let i = 0; i < plaintext.length; i++) {
+      let charCode = plaintext.charCodeAt(i);
+        encryptedCharCode[i] = modPow(charCode, e, n);
+        console.log(encryptedCharCode);
+    }
+    
+    return btoa(encryptedCharCode);
+  }
+
+
+
+function rsaDecrypt(ciphertext, d, n) {
+    let plaintext = '';
+    let charCode = atob(ciphertext);
+    var mang = charCode.split(",").map(Number);  
+    for (let i = 0; i < charCode.length; i++) {
+      let decryptedCharCode = modPow(mang[i], d, n);
+      plaintext += String.fromCharCode(decryptedCharCode);
+    }
+    return plaintext;
+  }

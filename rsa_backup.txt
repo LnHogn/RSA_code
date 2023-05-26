@@ -1,0 +1,44 @@
+function rsaEncrypt(plaintext, e, n) {
+    let ciphertext = '';
+    
+    for (let i = 0; i < plaintext.length; i++) {
+      let charCode = plaintext.codePointAt(i);
+      let encryptedCharCode = modPow(charCode, e, n);
+      ciphertext += String.fromCodePoint(encryptedCharCode);
+    }
+    
+    return ciphertext;
+  }
+
+
+
+function rsaDecrypt(ciphertext, d, n) {
+    let plaintext = '';
+  
+    for (let i = 0; i < ciphertext.length; i++) {
+      let charCode = ciphertext.codePointAt(i);
+      let decryptedCharCode = modPow(charCode, d, n);
+      plaintext += String.fromCodePoint(decryptedCharCode);
+    }
+  
+    return plaintext;
+  }
+
+
+  test1
+    function rsaEncrypt(plaintext, e, n) {
+    let ciphertext = '';
+    let encryptedCharCode =[];
+    for (let i = 0; i < plaintext.length; i++) {
+      let charCode = plaintext.codePointAt(i);
+      
+      
+        encryptedCharCode[i] = modPow(charCode, e, n);
+        console.log(encryptedCharCode);
+      
+      
+      // ciphertext += String.fromCodePoint(encryptedCharCode);
+    }
+    
+    return btoa(encryptedCharCode);
+  }
