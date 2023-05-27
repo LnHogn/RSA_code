@@ -98,7 +98,6 @@ function generateRSAKeys() {
     for (let i = 0; i < plaintext.length; i++) {
       let charCode = plaintext.charCodeAt(i);
         encryptedCharCode[i] = modPow(charCode, e, n);
-        console.log(encryptedCharCode);
     }
     
     return btoa(encryptedCharCode);
