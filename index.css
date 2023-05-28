@@ -1,52 +1,123 @@
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     background-color: #ffdcf5;
+    font-size: 16px;
 }
-h1{
-    color: #0c1845;
+.tieu_de{
+    position: relative;
+    color: #000000;
+    text-transform: uppercase;
+    width: 200px;
+    left: 100px;
+}
+
+h3{
+    width: 100px;
+    color: #000000;
+}
+
+.column {
+    float: left;
+    width: 25%;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+  }
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .vertical {
-    border-left: 6px solid #7c73e6;
-    height: 500px;
+    border-left: 3px solid #7c73e6;
+    height: 600px;
     position: absolute;
     left: 50%;
     margin-left: -3px;
     top: 70px;
 }
 
-
-.left-column {
-    margin-left: 2cm;
-    width: 50%;
-    height: 250px;
-    background: #ffdcf5;
-    float: left;
-}
-.right-column {
-    width: 45%;
-    height: 250px;
-    background: #ffdcf5;
-    float:right;
-}
-
 button{
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 22px;
     border-radius: 4px;
     background-color: white;
     border: 1px solid black;
     text-align: center;
+    width: 100px;
 }
 
 
 input{
-    font-family: 'Poppins', sans-serif;
-    
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    border-radius: 4px;
+    text-align: center;
 }
 
 textarea{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    border-radius: 4px;
+    width: 350px;
+}
+.nhap{
+    position: relative;
+    left: 200px;
+    top: 5px;
 }
 
+.maHoa{
+    position: relative;
+    left: 340px;
+    top: 50px;
+}
 
+.ketqua{
+    position: relative;
+    left: 200px;
+    top: 80px;
+}
+
+.but_chuyen{
+    position: relative;
+    left: 400px;
+    bottom: 90px;
+}
+
+.but_luu{
+    position: relative;
+    left: 400px;
+    bottom: 80px;
+}
+
+.nhap_ma{
+    position: relative;
+    left: 550px;
+    top: 5px;
+}
+
+.giaiMa{
+    position: relative;
+    left: 690px;
+    top: 50px;
+    width: 100px;
+}
+
+.xuat_dl{
+    position: relative;
+    left: 550px;
+    top: 80px;
+}
+
+.luu_button{
+    position: relative;
+    left: 400px;
+    bottom: 45px;   
+    width: 150px;
+}

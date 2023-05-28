@@ -7,16 +7,18 @@
   <link rel="stylesheet" href="index.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400');
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
   </style>
 </head>
 <body>
-  <h1>Mã hóa RSA</h1>
-
-  <div class="left-column">
-    <div class="nhap">
-      <label for="banro">Bản rõ: </label>
-      <textarea id="plaintext" rows="4" cols="40"></textarea>
+  <div class="tieu_de">
+    <h1>Mã hóa RSA</h1>
+  </div>
+  <div class="column">
+    <div class="left_column">
+      <div class="nhap">
+      <h3>Bản rõ:</h3>
+      <textarea id="plaintext" rows="4" cols="40"></textarea><br>
       <input type="file" id="fileInput" />
       <br>
       <script>
@@ -35,38 +37,48 @@
       <button onclick="encrypt()">Mã hóa</button><br>
     </div>
     <div class="ketqua">
-      <label for="ciphertext">Bản mã:</label>
+      <!-- <label for="ciphertext"></label> -->
+      <h3>Bản mã:</h3>
       <textarea id="ciphertext" rows="4" cols="40"></textarea>
-        <button id = "chuyen" onclick="chuyen()">Chuyển</button><br>
-        <button id = "luu_ban_ma" onclick="save_ban_ma()">Lưu</button>
+        <div class="but_chuyen">
+          <button id = "chuyen" onclick="chuyen()">Chuyển</button><br>
+        </div>
+        <div class="but_luu">
+          <button id = "luu_ban_ma" onclick="save_ban_ma()">Lưu</button>
+        </div>
+      </div>
     </div>
   </div>
 
   <div class = "vertical"></div>
 
-  <div class="right-column">
-    <label for="banma">Bản mã:</label>
-    <textarea id="banma" rows="4" cols="40"></textarea>
-    <input type="file" id="fileInput_2" /><br>
-
-    <script>
-      document.getElementById("fileInput_2").addEventListener("change", function (event) {
-        var file = event.target.files[0]; 
-        var reader = new FileReader();
-        reader.addEventListener("load", function (event) {
-          var contents = event.target.result;
-          document.getElementById("banma").textContent = contents;
+  <div class="column">
+    <div class="nhap_ma">
+      <h3>Bản mã:</h3>
+      <textarea id="banma" rows="4" cols="40"></textarea><br>
+      <input type="file" id="fileInput_2" /><br>
+      <script>
+        document.getElementById("fileInput_2").addEventListener("change", function (event) {
+          var file = event.target.files[0]; 
+          var reader = new FileReader();
+          reader.addEventListener("load", function (event) {
+            var contents = event.target.result;
+            document.getElementById("banma").textContent = contents;
+          });
+        reader.readAsText(file);
         });
-      reader.readAsText(file);
-      });
-    </script>
-
+      </script>
+    </div>
     <div class="giaiMa">
       <button onclick="decrypt()">Giải mã</button><br>
     </div>
-    <label for="giaiMa">Bản rõ:</label>
+    <div class="xuat_dl">
+      <h3>Bản rõ:</h3>
     <textarea id="giaiMa" rows="4" cols="40"></textarea>
-    <button id = "luu_ban_ro" onclick="save_ban_ro()">Lưu</button>
+    <div class="luu_button">
+      <button id = "luu_ban_ro" onclick="save_ban_ro()">Lưu</button>
+    </div>
+    </div>
   </div>
 </body>
 </html>
