@@ -45,7 +45,7 @@ function generateRSAKeys() {
   function getRandomPrime() {
     let prime;
     do {
-      prime = Math.floor(Math.random() * 100) + 2;
+      prime = Math.floor(Math.random() * 10000) + 2;
     } while (!isPrime(prime));
     return prime;
   }
