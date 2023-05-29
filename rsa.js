@@ -1,5 +1,3 @@
-// Hàm tính mũ a^b mod n
-
 function modPow(a, b, n) {
     let result = 1;
     a = a % n;
