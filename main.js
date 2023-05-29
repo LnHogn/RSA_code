@@ -4,20 +4,18 @@ document.getElementById('fileInput').addEventListener('change', handleFileSelect
 function encrypt() {
  
   let plaintext = document.getElementById("plaintext").value;
-  let e = keys.publicKey[0]; // Public exponent
-  let n = keys.publicKey[1]; // Modulus
-  console.log(keys.publicKey[0]);
-  console.log(keys.publicKey[1]);
+  let e = keys.publicKey[0];
+  let n = keys.publicKey[1];
+  
   let ciphertext = rsaEncrypt(plaintext, e, n);
   document.getElementById("ciphertext").innerHTML= ciphertext;
 }
 
 function decrypt() {
     let ciphertext = document.getElementById("banma").value;
-    let d = keys.privateKey[0]; // Private exponent
-    let n = keys.privateKey[1]; // Modulus
-    console.log(keys.privateKey[0]);
-    console.log(keys.privateKey[1]);
+    let d = keys.privateKey[0];
+    let n = keys.privateKey[1];
+    
     let plaintext = rsaDecrypt(ciphertext, d, n);
     document.getElementById("giaiMa").innerHTML = plaintext;
   }
