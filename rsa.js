@@ -1,3 +1,4 @@
+
 function modPow(a, b, n) {
     let result = 1;
     a = a % n;
@@ -31,14 +32,25 @@ function generateRSAKeys() {
     };
   }
 
+  // function isPrime(num) {
+  //   if (num < 2) return false;
+  
+  //   for (let i = 2; i <= Math.sqrt(num); i++) {
+  //     if (num % i === 0) return false;
+  //   }
+  
+  //   return true;
+  // }
   function isPrime(num) {
-    if (num < 2) return false;
-  
-    for (let i = 2; i <= Math.sqrt(num); i++) {
-      if (num % i === 0) return false;
-    }
-  
-    return true;
+    var sqrtnum=Math.floor(Math.sqrt(num));
+      var prime = num != 1;
+      for(var i=2; i<sqrtnum+1; i++) { // sqrtnum+1
+          if(num % i == 0) {
+              prime = false;
+              break;
+          }
+      }
+      return prime;
   }
 
 
@@ -113,3 +125,4 @@ function rsaDecrypt(ciphertext, d, n) {
     }
     return plaintext;
   }
+

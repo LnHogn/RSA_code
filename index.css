@@ -14,37 +14,59 @@ body {
 h3{
     width: 100px;
     color: #000000;
+    position: relative;
+    margin-left: 24%;
 }
 
-.column {
+h4{
+    width: 100px;
+    color: #000000;
+    position: relative;
+    margin-left: 24%;
+}
+
+.plk{
+    width: 50%;
     float: left;
-    width: 25%;
 }
 
-@media screen and (max-width: 600px) {
-    .column {
-      width: 100%;
-    }
-  }
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
+.prk{
+    width: 50%;;
+    float: right;
 }
+
+.public_key{
+    position: relative;
+    left: 25%;
+}
+
+.private_key{
+    position: relative;
+    left: 25%;
+}
+
+.column_left {
+    width: 50%;
+    float: left;
+}
+
+.column_right{
+    width: 50%;
+    float: right;
+}
+
 
 .vertical {
     border-left: 3px solid #7c73e6;
-    height: 600px;
+    height: 400px;
     position: absolute;
     left: 50%;
-    margin-left: -3px;
-    top: 70px;
+    top: 270px;
 }
 
 button{
     font-family: 'Open Sans', sans-serif;
-    font-size: 22px;
+    font-size: 18px;
     border-radius: 4px;
     background-color: white;
     border: 1px solid black;
@@ -58,66 +80,85 @@ input{
     font-size: 16px;
     border-radius: 4px;
     text-align: center;
+    
 }
 
 textarea{
     font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     border-radius: 4px;
     width: 350px;
+    border: 1px solid black;
+
 }
-.nhap{
+
+.tao_key{
+    font-size: 16px;
+    border-radius: 4px;
+    background-color: white;
+    border: 1px solid black;
+    text-align: center;
     position: relative;
-    left: 200px;
-    top: 5px;
+    margin-left: 10%;
+    top: 1px;
+}
+
+.nhap_ban_ro{
+    position: relative;
+    margin-left: 25%;
+}
+
+.nhap_ban_ma{
+    position: relative;
+    margin-left: 25%;
+}
+
+.file_ban_ro{
+    position: relative;
+    margin-left: 25%;
+}
+
+.file_ban_ma{
+    position: relative;
+    margin-left: 25%;
 }
 
 .maHoa{
     position: relative;
-    left: 340px;
-    top: 50px;
-}
-
-.ketqua{
-    position: relative;
-    left: 200px;
-    top: 80px;
-}
-
-.but_chuyen{
-    position: relative;
-    left: 400px;
-    bottom: 90px;
-}
-
-.but_luu{
-    position: relative;
-    left: 400px;
-    bottom: 80px;
-}
-
-.nhap_ma{
-    position: relative;
-    left: 550px;
-    top: 5px;
+    margin-left: 40%;
+    margin-top: 30px;
 }
 
 .giaiMa{
     position: relative;
-    left: 690px;
-    top: 50px;
-    width: 100px;
+    margin-left: 40%;
+    margin-top: 30px;
 }
 
-.xuat_dl{
+.xuat_ban_ma{
     position: relative;
-    left: 550px;
-    top: 80px;
+    margin-left: 25%;
 }
 
-.luu_button{
+.xuat_ban_ro{
     position: relative;
-    left: 400px;
-    bottom: 45px;   
-    width: 150px;
+    margin-left: 25%;
+}
+
+.chuyen{
+    position: relative;
+    margin-left: 75%;
+    bottom: 90px;
+}
+
+.luu_ban_ma{
+    position: relative;
+    margin-left: 75%;
+    bottom: 70px;
+}
+
+.luu_ban_ro{
+    position: relative;
+    margin-left: 75%;
+    bottom: 40px;
 }

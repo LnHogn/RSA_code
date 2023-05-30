@@ -14,71 +14,38 @@
   <div class="tieu_de">
     <h1>Mã hóa RSA</h1>
   </div>
-  <div class="column">
-    <div class="left_column">
-      <div class="nhap">
-      <h3>Bản rõ:</h3>
-      <textarea id="plaintext" rows="4" cols="40"></textarea><br>
-      <input type="file" id="fileInput" />
-      <br>
-      <script>
-        document.getElementById("fileInput").addEventListener("change", function (event) {
-          var file = event.target.files[0]; 
-          var reader = new FileReader();
-          reader.addEventListener("load", function (event) {
-            var contents = event.target.result;
-            document.getElementById("plaintext").textContent = contents;
-          });
-        reader.readAsText(file);
-        });
-      </script>
+  <div class="create_key">
+    <button class="tao_key" onclick="create_key()">Tạo khóa</button><br>
+    <div class="plk">
+      <h4>Public key:</h4>
+      <textarea class="public_key" id="public_key" cols="30" rows="3" readonly></textarea>
     </div>
-    <div class="maHoa">
-      <button onclick="encrypt()">Mã hóa</button><br>
+    <div class="prk">
+      <h4>Private key:</h4>
+      <textarea class="private_key" id="private_key" cols="30" rows="3" readonly></textarea>
     </div>
-    <div class="ketqua">
-      <!-- <label for="ciphertext"></label> -->
-      <h3>Bản mã:</h3>
-      <textarea id="ciphertext" rows="4" cols="40"></textarea>
-        <div class="but_chuyen">
-          <button id = "chuyen" onclick="chuyen()">Chuyển</button><br>
-        </div>
-        <div class="but_luu">
-          <button id = "luu_ban_ma" onclick="save_ban_ma()">Lưu</button>
-        </div>
-      </div>
-    </div>
+  </div>
+  <div class="column_left">
+    <h3 class="banro1">Bản rõ:</h3>
+    <textarea class="nhap_ban_ro" id="plaintext" rows="4" cols="40"></textarea><br>
+    <input class="file_ban_ro" type="file" id="fileInput" onclick="file_ban_ro()" /><br> 
+    <button class="maHoa" onclick="encrypt()">Mã hóa</button><br>
+    <h3 class="banma1">Bản mã:</h3>
+    <textarea class="xuat_ban_ma" id="ciphertext" rows="4" cols="40"></textarea>
+    <button class="chuyen" id = "chuyen" onclick="chuyen()">Chuyển</button><br>
+    <button class="luu_ban_ma" id = "luu_ban_ma" onclick="save_ban_ma()">Lưu</button>
   </div>
 
   <div class = "vertical"></div>
 
-  <div class="column">
-    <div class="nhap_ma">
+  <div class="column_right">
       <h3>Bản mã:</h3>
-      <textarea id="banma" rows="4" cols="40"></textarea><br>
-      <input type="file" id="fileInput_2" /><br>
-      <script>
-        document.getElementById("fileInput_2").addEventListener("change", function (event) {
-          var file = event.target.files[0]; 
-          var reader = new FileReader();
-          reader.addEventListener("load", function (event) {
-            var contents = event.target.result;
-            document.getElementById("banma").textContent = contents;
-          });
-        reader.readAsText(file);
-        });
-      </script>
-    </div>
-    <div class="giaiMa">
-      <button onclick="decrypt()">Giải mã</button><br>
-    </div>
-    <div class="xuat_dl">
+      <textarea class="nhap_ban_ma" id="banma" rows="4" cols="40"></textarea><br>
+      <input class="file_ban_ma" type="file" id="fileInput_2" onclick="file_ban_ma()"/><br>
+      <button class="giaiMa" onclick="decrypt()">Giải mã</button><br>
       <h3>Bản rõ:</h3>
-    <textarea id="giaiMa" rows="4" cols="40"></textarea>
-    <div class="luu_button">
-      <button id = "luu_ban_ro" onclick="save_ban_ro()">Lưu</button>
-    </div>
-    </div>
+    <textarea class="xuat_ban_ro" id="giaiMa" rows="4" cols="40"></textarea>
+    <button class="luu_ban_ro" id = "luu_ban_ro" onclick="save_ban_ro()">Lưu</button>
   </div>
 </body>
 </html>
